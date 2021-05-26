@@ -2,6 +2,7 @@ import Axios from 'axios'
 import React, {Component, Fragment, useEffect, useState } from 'react'
 import DOMPurify from 'dompurify';
 import {BrowserRouter, Route, Switch, Link, NavLink, Redirect} from 'react-router-dom';
+import Article from './article'
 
 
 class Blog extends Component {
@@ -44,27 +45,14 @@ class Blog extends Component {
                 <li key={post.id}>
                  <>
                       <article>
-                      <h2><Link title={post.title.rendered} to={`/posts/${post.id}`}>{post.title}</Link></h2>
+                      <Link to={`/posts/${post.id}`}><h2>{post.title}</h2></Link>
                       <div dangerouslySetInnerHTML={{ __html : DOMPurify.sanitize(post.body) } } />
                       </article>
                  </>
                 </li>) :
                 "cargando"}
           </ul>
-          <ul>
-          {this.state.comments && this.state.comments.length !== 0 ?
-                this.state.comments.map(comment => 
-                <li key={comment.id}>
-                 <>
-                      <article>
-                      <h2><a title={comment.name} href={`https://jsonplaceholder.typicode.com/comments/id/`.comment.id}>{comment.name}</a></h2>
-                      <div dangerouslySetInnerHTML={{ __html : DOMPurify.sanitize(comment.body )} } />
-                      </article>
-                 </>
-                </li>) :
-                "cargando"}
-          </ul>
-        </main>
+         </main>
        </div>
       );
       }

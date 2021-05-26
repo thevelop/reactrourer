@@ -6,7 +6,8 @@ import Sample from './components/sample/Sample'
 import NotFound from './components/notfound/NotFound'
 import About from './components/about/About'
 import Blog from './components/posts/index'
-import Article from './components/posts/[id]'
+//import Article from './components/posts/[id]'
+import Article from './components/posts/article'
 
 
 

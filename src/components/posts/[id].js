@@ -35,8 +35,8 @@ const Article = ({ ...props }) => {
                             <h1>Not found</h1>
                             ) : (
                             <Fragment>
-                                <h1>{props.match.title}</h1>
-                                <article dangerouslySetInnerHTML={ { __html : props.match.body } } />
+                                <h1>{props.match.params.title}</h1>
+                                <article dangerouslySetInnerHTML={ { __html : props.match.params.body } } />
                             </Fragment>
                         )}      
                   </div>
