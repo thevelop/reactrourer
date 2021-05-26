@@ -40,7 +40,7 @@ class Blog extends Component {
                 <li key={post.id}>
                  <>
                       <article>
-                      <img src={`https://picsum.photos/1200/678.webp?random=${post.id}`}></img>
+                      <img src={`https://picsum.photos/512/290.webp?random=${post.id}`}></img>
                       <h2><Link to={`/posts/${post.id}`}>{post.title}</Link></h2>
                       <div className="resumen" dangerouslySetInnerHTML={{ __html : DOMPurify.sanitize(post.body) } } />
                       <p><Link className="leer-mas link-button" to={`/posts/${post.id}`}>Leer más</Link></p>

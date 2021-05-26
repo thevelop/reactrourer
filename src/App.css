@@ -20,6 +20,8 @@ a{
 .lista-articulos li img{max-width:calc(100% + 40px);height:auto;margin-bottom:2em;margin-left:-20px}
 .lista-articulos li h2, .post-title{text-transform: uppercase;}
 .hero-image{width:100%;height:auto}
+.resumen{margin-bottom:20px}
+.resumen::first-letter{text-transform: uppercase;}
 
 
 @media only screen and (min-width:768px){
