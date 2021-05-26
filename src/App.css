@@ -1,0 +1,16 @@
+header, footer{background:#fefefe;padding:1em 4%;}
+header{border-bottom:1px solid rgba(0,0,0,0.1);margin-bottom:2em}
+footer{border-top:1px solid rgba(0,0,0,0.1);margin-top:2em}
+main{padding:1em 4%}
+
+.menu{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+a{
+  text-decoration: none;
+  color:#030000;
+}
+.link-button{background:#003399;color:#fff;border-radius:5px;padding:5px 10px}
