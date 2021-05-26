@@ -15,3 +15,17 @@ a{
   color:#030000;
 }
 .link-button{background:#003399;color:#fff;border-radius:5px;padding:5px 10px}
+.lista-articulos{list-style-type: none;display:flex;padding:0;margin:0;flex-direction:row;align-items: center;justify-content: space-between;width:100%;flex-wrap: wrap;}
+.lista-articulos li{padding:0 20px 2em 20px}
+.lista-articulos li img{max-width:calc(100% + 40px);height:auto;margin-bottom:2em;margin-left:-20px}
+.lista-articulos li h2, .post-title{text-transform: uppercase;}
+.hero-image{width:100%;height:auto}
+
+
+@media only screen and (min-width:768px){
+  .lista-articulos li{width:calc((100% * 0.50) - 20px)}
+}
+
+@media only screen and (min-width:1169px){
+  .lista-articulos li{width:calc((100% * 0.25) - 20px)}
+}

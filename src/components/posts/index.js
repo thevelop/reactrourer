@@ -26,35 +26,31 @@ class Blog extends Component {
           })
          } catch (error) {
           console.log(error);
-          console.log(error.response.data);
-          console.log(error.response.comdata);
-          console.log(error.response.status);
-          console.log(error.response.headers);
+          
         }
       }
 
     render(){
       return (
-      <div className="flex flex-col items-center justify-center min-h-screen">
-         <main className="flex flex-col items-center flex-1 px-20 py-10">
-          <h1 className="text-6xl font-bold mt-5 mb-5">Blog</h1>
-          <p className="text-xl mb-5">Using Json placeholder typicode api</p>
-          <ul>
+        <>
+          <h2>Blog</h2>
+          <ul className="lista-articulos">
           {this.state.posts && this.state.posts.length !== 0 ?
                 this.state.posts.map(post => 
                 <li key={post.id}>
                  <>
                       <article>
-                      <Link to={`/posts/${post.id}`}><h2>{post.title}</h2></Link>
-                      <div dangerouslySetInnerHTML={{ __html : DOMPurify.sanitize(post.body) } } />
+                      <img src={`https://picsum.photos/1200/678.webp?random=${post.id}`}></img>
+                      <h2><Link to={`/posts/${post.id}`}>{post.title}</Link></h2>
+                      <div className="resumen" dangerouslySetInnerHTML={{ __html : DOMPurify.sanitize(post.body) } } />
+                      <p><Link className="leer-mas link-button" to={`/posts/${post.id}`}>Leer más</Link></p>
                       </article>
                  </>
                 </li>) :
                 "cargando"}
           </ul>
-         </main>
-       </div>
-      );
+          </>
+         );
       }
   }
 
