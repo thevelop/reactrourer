@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 import '../../App.css'
 
 
@@ -30,10 +30,10 @@ export default class Sample extends Component {
                 {id === 0 ? (
                     <Redirect to="/404"/>
                 ) : (
-                    <div>ID no es 0</div>
+                    <p>ID no es 0</p>
                 )
                 }
-                <button className="link-button" onClick={this.goBack}>Volver al inicio</button>
+                <Link className="link-button" onClick={this.goBack}>Volver al inicio</Link>
           </>
         )
     }
