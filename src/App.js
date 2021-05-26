@@ -5,6 +5,8 @@ import Category from './components/category/Category'
 import Sample from './components/sample/Sample'
 import NotFound from './components/notfound/NotFound'
 import About from './components/about/About'
+import Blog from './components/posts/index'
+import Article from './components/posts/[id]'
 
 
 
@@ -19,6 +21,8 @@ export default class App extends Component {
                 <Switch>
                     <Route exact path="/" component={Default}/>
                     <Route exact path="/404" component={NotFound}/>
+                    <Route exact path="/posts" component={Blog}/>
+                    <Route path="/posts/:id" component={Article}/>
                     <Route path="/sample/:id/:name" component={Sample}/>
                     <Route exact path="/acerca" component={About}/>
                     <Route path="/category/:category" component={Category}/>

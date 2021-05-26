@@ -10,6 +10,7 @@ export default class Default extends Component {
              <nav className="menu">
                 <Link to="/">Inicio</Link> |
                 <Link to="/acerca">Acerca</Link> |
+                <Link to="/posts">Blog</Link> |
                 <Link to="/nourl">Error 404</Link> |
                 <Link to="/category/peliculas">Category: Películas</Link> |
                 <Link to="/category/fail">Category: Error (Con redirect)</Link> |
