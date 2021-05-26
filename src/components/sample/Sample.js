@@ -4,8 +4,10 @@ import '../../App.css'
 
 
 export default class Sample extends Component {
-    goBack = () => {
+    goBack = (e) => {
+        e.preventDefault();
         this.setState({redirectToDefault: true});
+        console.log("Redirección por funciones")
     }
 
     constructor(props){
@@ -33,7 +35,7 @@ export default class Sample extends Component {
                     <p>ID no es 0</p>
                 )
                 }
-                <Link className="link-button" onClick={this.goBack}>Volver al inicio</Link>
+                <Link className="link-button" to="/" onClick={this.goBack}>Volver al inicio</Link>
           </>
         )
     }

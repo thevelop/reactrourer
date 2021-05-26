@@ -8,7 +8,7 @@ export default class Category extends Component {
         const category = this.props.match.params.category;
         return (
             <>
-             <h2 className="cabecera-header">Componente de categoría</h2>
+             <h2 className="cabecera-header">Componente de categoría: {category}</h2>
                     {category !== 'fail' ? (
                         <p>Esta es la página para la categoría: {category}</p>
                                             ) : (
@@ -16,6 +16,9 @@ export default class Category extends Component {
                                             )
                     }
             <Link className="link-button" to="/">Volver atrás</Link>
+            <p>
+            <Link className="link-button" to="/category/guitarras">Ver categoría guitarras</Link>
+            </p>
             </>
         )
     }
