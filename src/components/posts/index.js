@@ -41,6 +41,8 @@ class Blog extends Component {
                 <title>Blog desde API REST - Ejemplo de routing con React Router DOM</title>
                 <meta name="description" content="BLOG - Ejemplo de uso de React Router DOM en aplicación con componentes estáticos y conexión a API REST" />
                 <link rel="canonical" href="http://ejemplorouting.com/posts" />
+                <body className="blog" />
+                <style>{inline_styles}</style>
           </Helmet>
           <h2>Blog</h2>
           <ul className="lista-articulos">
@@ -66,3 +68,12 @@ class Blog extends Component {
   }
 
   export default Blog;
+
+  const inline_styles = (`
+    header, footer{background:#dc7a1b}
+    header *, footer *{color:#fff}
+    .blog{background:#000}
+    .blog main *{color:#fff}
+    .link-button{background:#dc7a1b}
+    .link-button:hover{background:#323232}
+`)

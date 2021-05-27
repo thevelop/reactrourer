@@ -5,6 +5,7 @@ import '../../App.css'
 
 
 export default class About extends Component {
+    
     render() {
         return (
             <>
@@ -13,7 +14,9 @@ export default class About extends Component {
                 <title>Acerca - Ejemplo de routing con React Router DOM</title>
                 <meta name="description" content="Acerca - Ejemplo de uso de React Router DOM en aplicación con componentes estáticos y conexión a API REST" />
                 <link rel="canonical" href="http://ejemplorouting.com/acerca" />
-                </Helmet>
+                <body className="about" />
+                <style>{inline_styles}</style>
+            </Helmet>
             <h2 className="cabecera-header">Acerca</h2>
             <p>Estás viendo la página Acerca</p>
             <Link className="link-button" to="/">Volver al inicio</Link>
@@ -21,3 +24,9 @@ export default class About extends Component {
         )
     }
 }
+
+const inline_styles = (`
+    .about{background:#000}
+    .about main *{color:#fff}
+    
+`)

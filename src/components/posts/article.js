@@ -37,6 +37,8 @@ class Article extends Component {
                     <title>{this.state.post.title}</title>
                     <meta name="description" content={DOMPurify.sanitize(this.state.post.body) } />
                     <link rel="canonical" href={`http://ejemplorouting.com/posts/${this.state.post.id}`} />
+                    <body className="article" />
+                    <style>{inline_styles}</style>
                     </Helmet>
                       <article>
                       <img loading="lazy" className="hero-image" alt={this.state.post.title} src={`https://picsum.photos/1200/678.webp?random=${this.props.match.params.id}`}></img>
@@ -55,3 +57,18 @@ class Article extends Component {
 }
 
   export default Article;
+
+  let randomColor = "#"+((1<<24)*Math.random()|0).toString(16); 
+
+  function invertColor(color) {
+    return '#' + ("000000" + (0xFFFFFF ^ parseInt(color.substring(1),16)).toString(16)).slice(-6);
+}
+
+  const inline_styles = (`
+    header, footer{background:#dc7a1b}
+    header *, footer *{color:#fff}
+    .article{background:${randomColor}}
+    .article main *:not(.link-button){color:${invertColor(randomColor)}}
+    .link-button{background:#dc7a1b}
+    .link-button:hover{background:#323232}
+`)
