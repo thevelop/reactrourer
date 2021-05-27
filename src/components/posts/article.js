@@ -1,5 +1,6 @@
 import Axios from 'axios'
 import React, {Component, Fragment, useEffect, useState } from 'react'
+import {Helmet} from 'react-helmet'
 import DOMPurify from 'dompurify';
 import {BrowserRouter, Route, Switch, Link, NavLink, Redirect} from 'react-router-dom';
 import Comments from './comments'
@@ -31,9 +32,14 @@ class Article extends Component {
     render(){
       return (
      <> 
-     
+                    <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>{this.state.post.title}</title>
+                    <meta name="description" content={DOMPurify.sanitize(this.state.post.body) } />
+                    <link rel="canonical" href={`http://ejemplorouting.com/posts/${this.state.post.id}`} />
+                    </Helmet>
                       <article>
-                      <img className="hero-image" alt={this.state.post.title} src={`https://picsum.photos/1200/678.webp?random=${this.props.match.params.id}`}></img>
+                      <img loading="lazy" className="hero-image" alt={this.state.post.title} src={`https://picsum.photos/1200/678.webp?random=${this.props.match.params.id}`}></img>
                       <h2 className="post-title">{this.state.post.title}</h2>
                       <div dangerouslySetInnerHTML={{ __html : DOMPurify.sanitize(this.state.post.body) } } />
                       </article>

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {BrowserRouter, Route, Switch, Link, NavLink, Redirect} from 'react-router-dom';
+import {Helmet} from "react-helmet";
 import Default from './components/default/Default'
 import Category from './components/category/Category'
 import Sample from './components/sample/Sample'
@@ -15,6 +16,12 @@ export default class App extends Component {
     render() {
         return (
             <div className="app">
+                <Helmet>
+                <meta charSet="utf-8" />
+                <title>Ejemplo de routing con React Router DOM</title>
+                <meta name="description" content="Ejemplo de uso de React Router DOM en aplicación con componentes estáticos y conexión a API REST" />
+                <link rel="canonical" href="http://ejemploroutin.com" />
+                </Helmet>
                 <header className="header">
                     <h1 className="cabecera-header">Ejemplo de rutas</h1>
                 </header>

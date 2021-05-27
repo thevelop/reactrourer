@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Redirect, Link} from 'react-router-dom'
+import {Helmet} from 'react-helmet'
 import '../../App.css'
 
 
@@ -8,9 +9,15 @@ export default class Category extends Component {
         const category = this.props.match.params.category;
         return (
             <>
-             <h2 className="cabecera-header">Componente de categoría: {category}</h2>
+            <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>{category.toUpperCase()} - Ejemplo de routing</title>
+                    <meta name="description" content={`Página para publicaciones de la categoría: ${category}`} />
+                    <link rel="canonical" href={`http://ejemplorouting.com/category/${category}`} />
+            </Helmet>
+             <h2 className="cabecera-header">Componente de categoría: {category.toUpperCase()}</h2>
                     {category !== 'fail' ? (
-                        <p>Esta es la página para la categoría: {category}</p>
+                        <p>Esta es la página para la categoría: {category.toUpperCase()}</p>
                                             ) : (
                         <Redirect to={{pathname: '/404', state:{from: this.props.location, sample:666}}}/>
                                             )
